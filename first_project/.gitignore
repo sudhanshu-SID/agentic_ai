@@ -1,0 +1,10 @@
+# Environments
+venv/
+env/
+
+# .env
+.env
+
+# API keys
+*.pyc
+__pycache__
