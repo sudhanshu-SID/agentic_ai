@@ -1,0 +1,10 @@
+{
+  "role_title": "Senior Python Developer",
+  "required_skills": [
+    "Python",
+    "FastAPI",
+    "Docker",
+    "SQL"
+  ],
+  "experience_level": "Senior"
+}

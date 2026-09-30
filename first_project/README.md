@@ -12,3 +12,10 @@
 
 I'll learn these in depth while making the project that is:
 # JOB DESCRIPTION ANALYSER
+
+## What I Learned (Phase 1 Complete)
+- **Virtual Environments**: Set up `.venv` to isolate dependencies.
+- **CLI Interfaces**: Used `argparse` to capture user input from the terminal.
+- **Pydantic**: Created a strict `BaseModel` to enforce data structure (`JobRequirements`).
+- **File I/O & JSON**: Used `with open()` to read local mock JSON data, parsed it with `json.load()`, and saved formatted data back to disk using `model_dump_json()`.
+- **Error Handling**: Implemented `try/except` blocks to gracefully handle missing files or bad data.
