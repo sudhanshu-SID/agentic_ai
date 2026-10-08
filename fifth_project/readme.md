@@ -1,0 +1,1 @@
+# Learned about how the parsing, chunking, embedding, storing in vectordb, retreving from vectordb(top k), giving llm the data and prompt, how to ground the output according to the source data and citations only, and finally getting the output from the llm with proper source.
