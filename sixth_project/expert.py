@@ -44,11 +44,10 @@ def expert_agent(state: AgencyState) -> dict:
     can_request_revision = (revision_count < 1)
 
     prompt = f""" 
-    You are a world-class travel editor, fact-checker, and video director,
-    who is great in cinematic storytelling and instagram reel videos.
+    You are a world-class viral travel video director and editor, specializing in high-retention cinematic Instagram Reels and YouTube Shorts (in the style of Sankho Kun, Rohit CB, and Ajay Raj).
 
     Topic: {topic}
-    verified Research Notes:
+    Verified Research Notes:
     {research_notes}
 
     Writer's Script Draft: 
@@ -57,20 +56,20 @@ def expert_agent(state: AgencyState) -> dict:
     Current Revision Pass: {revision_count} 
     Can Request Revision: {can_request_revision}
 
-    EVALUATION CRITERIA: 
-    1. Factual Fidelity: did the writer hallucinate places or facts NOT  in the research notes?
-    2. Engagement and hook: Is the hook strong? Is the narration engaging?
-    3. missing elements: is the tone right for a travel video?
-    4. Structure: Is it well organized with proper transitions?
+    EVALUATION CRITERIA (Reel Standards: 30–75 Seconds):
+    1. 🎣 3-Second Hook: Does it immediately seize attention with tension or contrarian curiosity? Reject any generic "Hey guys" or weak intros.
+    2. ⏱️ Duration & Word Count: Is spoken narration strictly 120–180 words (suitable for a 30–75s reel)? Reject long-form essays or 7-8 min scripts!
+    3. 🎥 Cinematic & Sensory Storytelling: Are there clear [VISUAL] and [SFX / AUDIO] tags? Does it describe taste, aroma, steam, and atmosphere rather than just listing spots?
+    4. 🔍 Factual Fidelity: Did the writer hallucinate places or facts NOT in the verified research notes?
 
-    INSTRUCTION; 
-    - In 'critique': Provide specific, constructive feedback detaililng what worked and what should be improved.
+    INSTRUCTIONS:
+    - In 'critique': Provide sharp, direct feedback on the hook, word count / timing, sensory cues, and flow.
     - In 'needs_revision': 
-        -If 'Can Request Revision' is TRUE AND  the sript has notable flaws or missing hooks, set to TRUE.
-        -If 'Can Request Revision' is FALSE, OR  the script is already high quality, set to FALSE.
+        - If 'Can Request Revision' is TRUE AND (script is too long, hook is weak, lacks sensory cues, or has factual errors) -> set to TRUE.
+        - If 'Can Request Revision' is FALSE, OR the script already hits elite Reel standards -> set to FALSE.
     - In 'final_draft':
-        -If 'needs_revision' is False, produce the polished, finalized, publication-ready script.
-        -If 'needs_revision' is TRUE, leave this as empty string(writer will revise next).
+        - If 'needs_revision' is FALSE, produce the final, perfectly formatted publication-ready Reel script with all [VISUAL], [SFX], and [VOICEOVER] tags.
+        - If 'needs_revision' is TRUE, leave this as an empty string (writer will revise next).
     """
     print(f" [Expert] Reviewing draft (Revision Pass: {revision_count})...")
 
